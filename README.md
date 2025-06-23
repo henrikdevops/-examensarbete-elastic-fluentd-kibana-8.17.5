@@ -20,4 +20,4 @@ kubectl apply -f kibana-secret-token.yaml
 
 kubectl apply -f fluentd-daemonset.yaml
 kubectl apply -f fluentd-configmap.yaml
-============================================================================
+
