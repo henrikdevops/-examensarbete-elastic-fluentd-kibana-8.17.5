@@ -6,6 +6,8 @@ cd /bin
 
 ./elasticsearch-setup-passwords
 
+(Save passwords)
+
 kubcetl apply -f elastic-credentials #Använd lösenord från es-generator
 
 
