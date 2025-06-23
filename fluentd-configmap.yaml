@@ -14,21 +14,29 @@ data:
       <parse>
         @type cri
         time_key time
-        #time_format %Y-%m-%dT%H:%M:%S.%N%:z
-        #multiline_flush_interval 5s
       </parse>
     </source>
 
     <filter kubernetes.**>
       @type grep
-      <regex>
-        key $.kubernetes.default
+      <regexp>
+        key $.kubernetes.namespace_name
         pattern ^default$
-      </regex>
+      </regexp>
     </filter>
 
     <filter kubernetes.**>
       @type kubernetes_metadata
+    </filter>
+
+    <filter kubernetes.**>
+      @type parser
+      key_name log
+      reserve_data true
+      remove_key_name_field true
+      <parse>
+        @type json
+      </parse>
     </filter>
 
     <match kubernetes.**>
@@ -44,24 +52,15 @@ data:
       include_tag_key true
       type_name _doc
       flush_interval 5s
+      reconnect_on_error true
+      reload_on_failure true
+      request_timeout 10s
       <buffer>
         @type file
         path /var/log/fluentd-buffers
         chunk_limit_size 16MB
         total_limit_size 512MB
-        flush_internval 5s
+        flush_interval 5s
         retry_forever true
       </buffer>
-      #reconnect_on_error true
-      #reload_on_failure true
-      #request_timeout 10s
     </match>
-
-    <buffer>
-      @type file
-      path /var/log/fluentd-buffers
-      chunk_limit_size 16MB
-      total_limit_size 512MB
-      flush_internval 5s
-      retry_forever true
-    </buffer>
