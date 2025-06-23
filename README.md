@@ -4,18 +4,15 @@ kubectl apply -f es-statefulset.yaml
 
 cd /bin
 
-./elasticsearch-service-tokens create kibana kibana-token.
+./elasticsearch-setup-passwords
 
-[Använd denna token i kibana-secret-token]
-
+kubcetl apply -f elastic-credentials #Använd lösenord från es-generator
 
 Version från 9.0.0 och uppåt KRÄVS token! Det går ej använda sig av elastic som user och sätta lösenord
 
 2. KIBANA
    
 kubectl apply -f kibana.yml
-
-kubectl apply -f kibana-secret-token.yaml
 
 3. Fluentd
    
