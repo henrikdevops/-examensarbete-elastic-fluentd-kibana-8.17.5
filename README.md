@@ -1,5 +1,3 @@
-==========================================  Körordning 
-
 1.ELASTICSEARCH
 
 kubectl apply -f es-statefulset.yaml
