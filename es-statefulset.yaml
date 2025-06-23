@@ -6,7 +6,7 @@ metadata:
 type: Opaque
 stringData:
   username: elastic
-  password: hejsan123
+  password: ""
 
 ---
 apiVersion: v1
