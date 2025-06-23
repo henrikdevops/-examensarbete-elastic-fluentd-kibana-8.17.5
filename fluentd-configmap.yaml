@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: fluentd-config
+  namespace: efk
+data:
+  fluent.conf: |
+    <source>
+      @type tail
+      path /var/log/containers/*.log
+      pos_file /var/log/fluentd-containers.pos
+      tag kube.*
+      format json
+      time_key time
+      time_format %Y-%m-%dT%H:%M:%S.%N%z
+    </source>
+
+    <filter **>
+      @type kubernetes_metadata
+    </filter>
+
+    <match **>
+      @type elasticsearch
+      host elasticsearch.efk.svc.cluster.local
+      port 9200
+      scheme http
+      user elastic
+      password <your-password-here>  # from elasticsearch-setup-passwords
+      logstash_format true
+      index_name kubernetes_cluster
+      flush_interval 5s
+    </match>
