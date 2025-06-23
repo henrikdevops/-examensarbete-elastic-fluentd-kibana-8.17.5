@@ -1,5 +1,7 @@
 1. ELASTICSEARCH
 
+kubectl apply -f elastic-credentials
+
 kubectl apply -f es-statefulset.yaml
 
 cd /bin
