@@ -10,7 +10,7 @@ cd /bin
 
 [Använd denna token i kibana-secret-token]
 
-TÄNK PÅ:
+
 Version från 9.0.0 och uppåt KRÄVS token! Det går ej använda sig av elastic som user och sätta lösenord
 
 2. KIBANA
