@@ -3,7 +3,7 @@
 1.ELASTICSEARCH
 
 kubectl apply -f es-statefulset.yaml
-
+=====================================================================================================
 Gå till:   /bin
 Kör:      ./elasticsearch-service-tokens create kibana kibana-token
 Använd denna token i kibana-secret-token. 
@@ -11,7 +11,7 @@ Använd denna token i kibana-secret-token.
 [INFO]
 Version från 9.0.0 och uppåt KRÄVS token! Det går ej använda sig av elastic som user och sätta lösenord
 
-
+=====================================================================================================
 =====================================================================================================
 2. KIBANA
 
