@@ -21,11 +21,11 @@ data:
 
     <match **>
       @type elasticsearch
-      host elasticsearch.efk.svc.cluster.local
+      host elasticsearch.logging.svc.cluster.local
       port 9200
       scheme http
       user elastic
-      password <your-password-here>  # from elasticsearch-setup-passwords
+      password "#{ENV['ES_PASSWORD']}"
       logstash_format true
       index_name kubernetes_cluster
       flush_interval 5s
