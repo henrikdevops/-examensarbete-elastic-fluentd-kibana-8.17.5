@@ -11,7 +11,7 @@ kubcetl apply -f elastic-credentials #Använd lösenord från es-generator
 
 2. KIBANA
    
-kubectl apply -f kibana.yml
+kubectl apply -f kibana-deployment.yml
 
 3. Fluentd
    
