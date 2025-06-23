@@ -2,6 +2,8 @@
 
 kubectl apply -f es-statefulset.yaml
 
+Hoppa in i elasticsearchpodden och skapa token.
+
 cd /bin
 
 ./elasticsearch-service-tokens create kibana kibana-token.
