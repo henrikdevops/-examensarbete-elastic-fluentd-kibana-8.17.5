@@ -43,7 +43,7 @@ spec:
     spec:
       containers:
         - name: elasticsearch
-          image: docker.elastic.co/elasticsearch/elasticsearch:9.0.2
+          image: docker.elastic.co/elasticsearch/elasticsearch:9.0.2    ### 9.0.0 och senare MÅSTE token användas!!!
           ports:
             - containerPort: 9200
             - containerPort: 9300
@@ -53,8 +53,8 @@ spec:
             - name: ELASTIC_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: elastic-credentials
-                  key: password
+                  name: elastic-credentials                              ### 9.0.0 och senare MÅSTE token användas!!!
+                  key: password                                          ### 9.0.0 och senare MÅSTE token användas!!!
             - name: xpack.security.enabled
               value: "true"
           volumeMounts:
