@@ -9,6 +9,24 @@ spec:
   ports:
     - port: 5601
       targetPort: 5601
+#==============================================================================
+####### NODE PORT ###### 
+#apiVersion: v1
+#kind: Service
+#metadata:
+#  name: kibana
+#  namespace: logging
+#spec:
+#  selector:
+#    app: kibana
+#  type: NodePort
+#  ports:
+#    - name: http
+#      port: 5601
+#      targetPort: 5601
+#      nodePort: 30601  # Välj en port inom tillåtna intervallet 30000–32767
+####### NODE PORT ###### 
+#==============================================================================
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -33,7 +51,7 @@ spec:
           env:
             - name: ELASTICSEARCH_HOSTS
               value: "http://elasticsearch:9200"
-            - name: ELASTICSEARCH_SERVICEACCOUNTTOKEN
+            - name: ELASTICSEARCH_SERVICEACCOUNTTOKEN # Äldre version av ES och KIBANA krävs TOKEN!   ### Går ej köra username/password
               valueFrom:
                 secretKeyRef:
                   name: kibana-service-token
