@@ -43,7 +43,7 @@ spec:
     spec:
       containers:
         - name: elasticsearch
-          image: docker.elastic.co/elasticsearch/elasticsearch:9.0.0    ### 9.0.0 och senare MÅSTE token användas!!!
+          image: docker.elastic.co/elasticsearch/elasticsearch:8.17.5   ### 9.0.0 och senare MÅSTE token användas!!!
           ports:
             - containerPort: 9200
             - containerPort: 9300
