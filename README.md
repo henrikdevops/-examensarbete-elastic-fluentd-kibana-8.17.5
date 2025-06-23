@@ -4,8 +4,8 @@
 
 kubectl apply -f es-statefulset.yaml
 
-cd bin
-./bin/elasticsearch-service-tokens create kibana kibana-token
+Gå till:   /bin
+Kör:      ./elasticsearch-service-tokens create kibana kibana-token
 Använd denna token i kibana-secret-token. 
 
 [INFO]
