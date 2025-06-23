@@ -14,7 +14,13 @@ kubcetl apply -f elastic-credentials #Använd lösenord från es-generator
 
 
 2. KIBANA
-   
+
+kubectl create secret generic kibana-auth \
+  --from-literal=username=kibana_system \
+  --from-literal=password=your-kibana-password \   
+  -n logging
+#Use password from ./elasticsearch-setups-password auto
+
 kubectl apply -f kibana-deployment.yml
 
 3. Fluentd
