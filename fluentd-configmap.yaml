@@ -9,17 +9,29 @@ data:
       @type tail
       path /var/log/containers/*.log
       pos_file /var/log/fluentd-containers.pos
-      tag kube.*
-      format json
-      time_key time
-      time_format %Y-%m-%dT%H:%M:%S.%N%z
+      tag kubernetes.*
+      read_from_head true
+      <parse>
+        @type cri
+        time_key time
+        #time_format %Y-%m-%dT%H:%M:%S.%N%:z
+        #multiline_flush_interval 5s
+      </parse>
     </source>
 
-    <filter **>
+    <filter kubernetes.**>
+      @type grep
+      <regex>
+        key $.kubernetes.default
+        pattern ^default$
+      </regex>
+    </filter>
+
+    <filter kubernetes.**>
       @type kubernetes_metadata
     </filter>
 
-    <match **>
+    <match kubernetes.**>
       @type elasticsearch
       host elasticsearch.logging.svc.cluster.local
       port 9200
@@ -27,6 +39,29 @@ data:
       user elastic
       password "#{ENV['ES_PASSWORD']}"
       logstash_format true
-      index_name kubernetes_cluster
+      logstash_prefix kubernetes
+      logstash_dateformat %Y.%m.%d
+      include_tag_key true
+      type_name _doc
       flush_interval 5s
+      <buffer>
+        @type file
+        path /var/log/fluentd-buffers
+        chunk_limit_size 16MB
+        total_limit_size 512MB
+        flush_internval 5s
+        retry_forever true
+      </buffer>
+      #reconnect_on_error true
+      #reload_on_failure true
+      #request_timeout 10s
     </match>
+
+    <buffer>
+      @type file
+      path /var/log/fluentd-buffers
+      chunk_limit_size 16MB
+      total_limit_size 512MB
+      flush_internval 5s
+      retry_forever true
+    </buffer>
