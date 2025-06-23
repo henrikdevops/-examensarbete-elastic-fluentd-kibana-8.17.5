@@ -12,10 +12,14 @@ TÄNK PÅ:
 Version från 9.0.0 och uppåt KRÄVS token! Det går ej använda sig av elastic som user och sätta lösenord
 
 2. KIBANA
+3. 
 kubectl apply -f kibana.yml
+
 kubectl apply -f kibana-secret-token.yaml
 
-3. Fluentd
+4. Fluentd
+   
 kubectl apply -f fluentd-daemonset.yaml
+
 kubectl apply -f fluentd-configmap.yaml
 
