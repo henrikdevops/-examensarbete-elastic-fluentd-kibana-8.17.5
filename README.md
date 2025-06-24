@@ -29,7 +29,7 @@ alias kubectl='microk8s kubectl'
 RUN
 
 source ~/.bashrc
-}
+} ## Wihtout this you need to run: microk8s kubectl apply instead of only using kubectl
 
 
 EFK-STACK
