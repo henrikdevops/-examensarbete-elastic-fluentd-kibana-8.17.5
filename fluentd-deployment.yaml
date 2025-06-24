@@ -30,14 +30,11 @@ spec:
               value: "elastic"
             - name: ELASTICSEARCH_PASSWORD
               value: "asdasd"  # Replace with real password or secretKeyRef
-#          env:
-#            - name: FLUENT_UID
-#              value: "0"
-#            - name: ES_API_KEY
-#             valueFrom:
-#                secretKeyRef:
-#                  name: fluentd-api-key
-#                  key: api_key
+            - name: ELASTICSEARCH_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: elastic-auth 
+                  key: password
           volumeMounts:
             - name: varlog
               mountPath: /var/log
