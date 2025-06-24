@@ -44,13 +44,12 @@ data:
       host elasticsearch
       port 9200
       scheme http
-      user "#{ENV['ELASTICSEARCH_USER']}"
+      user elasticsearch
       password "#{ENV['ELASTICSEARCH_PASSWORD']}"
       logstash_format true  
       logstash_prefix kubernetes
       logstash_dateformat %Y.%m.%d
       include_tag_key true
-      type_name _doc
       flush_interval 5s
       reconnect_on_error true
       reload_on_failure true
