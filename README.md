@@ -33,10 +33,8 @@ kubectl apply -f fluentd-daemonset.yaml
 kubectl apply -f fluentd-configmap.yaml
 
 
+Set up Microk8s
 =============================
-Micro8ks
-
-
 snap install microk8s --classic --channel=1.33/stable
 microk8s enable dns
 microk8s enable hostpath-storage
