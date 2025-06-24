@@ -101,8 +101,7 @@ kubecttl apply -f fluentd-serviceaccount.yaml
 kubectl apply -f fluentd-daemonset.yaml
 
 ----------------------------------------------------------------------------------------
-
-Make sure you have forward port
+### Port forwarding if not using NodePort:
 
 - 5601   Kibana 
 - 9200   Elasticsearch 
