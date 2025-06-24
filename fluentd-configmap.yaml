@@ -41,7 +41,7 @@ data:
 
     <match kubernetes.**>
       @type elasticsearch
-      host "#{ENV['ELASTICSEARCH_HOST']}"
+      host elasticsearch
       port 9200
       scheme http
       user "#{ENV['ELASTICSEARCH_USER']}"
