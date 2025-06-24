@@ -45,8 +45,9 @@ EFK-STACK
 
 kubectl apply -f elastic-credentials
 
-### You will need this later on for fluentd ###
-### Add your elastic-password in this file before applying ###
+### You will need this later on for fluentd
+Add your elastic-password in this file before applying ###
+
 kubectl apply -f elasitc-auth-secret.yaml
 
 kubectl apply -f es-statefulset.yaml
