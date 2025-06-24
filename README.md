@@ -65,12 +65,11 @@ cd /bin
 
 {
 
-password will be printed. Save them and use it for 
+Password will be printed. Save them and use it for:
 
 - elastic-credentials
 - elastic-auth-secret
 
-- 
 }
 
 kubcetl apply -f elastic-credentials #Använd lösenord från es-generator
