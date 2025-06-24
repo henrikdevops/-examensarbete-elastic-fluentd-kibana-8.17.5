@@ -1,6 +1,6 @@
 Dont use this setup in prod. This is only for testing
 ====================
-
+----------------------------------------------------------------------------------------
 Set up Microk8s
 =============================
 snap install microk8s --classic --channel=1.33/stable
@@ -54,7 +54,7 @@ cd /bin
 
 kubcetl apply -f elastic-credentials #Använd lösenord från es-generator
 
-
+----------------------------------------------------------------------------------------
 2. KIBANA
 
 ADD password in kibana-secret from password: kibana_system
@@ -64,6 +64,7 @@ kubectl apply -f kibana-secret.yaml
 kubectl apply -f kibana-deployment.yaml
 
 kubectl port-forward svc/kibana 5601:5601 -n logging
+----------------------------------------------------------------------------------------
 
 3. FLUENTD
    
