@@ -50,9 +50,13 @@ microk8s enable ingress dns
 microk8s enable dashboard
 
 sudo vi ~/.bashrc
+
 ADD
+
 alias kubectl='microk8s kubectl'
+
 RUN
+
 source ~/.bashrc
 
 
