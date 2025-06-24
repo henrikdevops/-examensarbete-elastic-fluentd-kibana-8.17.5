@@ -75,6 +75,10 @@ Password will be printed. Save them and use it for:
 
 kubcetl apply -f elastic-credentials #Använd lösenord från es-generator
 
+kubectl port-forward service/SERVICENAME 9200:9200 -n NAMESPACE
+
+
+
 ----------------------------------------------------------------------------------------
 2. ### KIBANA
 
@@ -84,7 +88,7 @@ kubectl apply -f kibana-secret.yaml
 
 kubectl apply -f kibana-deployment.yaml
 
-kubectl port-forward svc/kibana 5601:5601 -n logging
+kubectl port-forward svc/SERVICENAME 5601:5601 -n NAMESPACE
 
 ----------------------------------------------------------------------------------------
 
