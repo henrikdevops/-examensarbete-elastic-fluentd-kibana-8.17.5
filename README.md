@@ -1,4 +1,4 @@
-This is only for testing 
+[info] WARN: This is only for testing 
 ====================
 ----------------------------------------------------------------------------------------
 Set up Microk8s
