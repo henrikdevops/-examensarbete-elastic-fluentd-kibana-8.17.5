@@ -41,12 +41,12 @@ data:
 
     <match kubernetes.**>
       @type elasticsearch
-      host elasticsearch.logging.svc.cluster.local
+      host "#{ENV['ELASTICSEARCH_HOST']}"
       port 9200
       scheme http
-      user elastic
-      password "#{ENV['ES_PASSWORD']}"
-      logstash_format true
+      user "#{ENV['ELASTICSEARCH_USER']}"
+      password "#{ENV['ELASTICSEARCH_PASSWORD']}"
+      logstash_format true  
       logstash_prefix kubernetes
       logstash_dateformat %Y.%m.%d
       include_tag_key true
