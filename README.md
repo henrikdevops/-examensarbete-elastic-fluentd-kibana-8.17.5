@@ -1,4 +1,4 @@
-Dont use this setup in prod. This is only for testing
+This is only for testing 
 ====================
 ----------------------------------------------------------------------------------------
 Set up Microk8s
