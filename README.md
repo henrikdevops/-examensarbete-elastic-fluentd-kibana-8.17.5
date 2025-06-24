@@ -57,13 +57,21 @@ kubectl apply -f elasitc-auth-secret.yaml
 
 kubectl apply -f es-statefulset.yaml
 
-Go into elasticpod
+Go into elasticpod to setup the password.
 
 cd /bin
 
-./elasticsearch-setup-passwords
+./elasticsearch-setup-passwords auto
 
-(Save passwords)
+{
+
+password will be printed. Save them and use it for 
+
+- elastic-credentials
+- elastic-auth-secret
+
+- 
+}
 
 kubcetl apply -f elastic-credentials #Använd lösenord från es-generator
 
