@@ -48,6 +48,7 @@ kubectl apply -f elastic-credentials
 {
 
 You will need elastic-auth-secret later on for fluentd
+
 Add your elastic-password in this file before applying
 
 }
