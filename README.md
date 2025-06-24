@@ -68,7 +68,7 @@ cd /bin
 kubcetl apply -f elastic-credentials #Använd lösenord från es-generator
 
 ----------------------------------------------------------------------------------------
-2. KIBANA
+2. ###KIBANA
 
 ADD password in kibana-secret from password: kibana_system
 
@@ -80,7 +80,7 @@ kubectl port-forward svc/kibana 5601:5601 -n logging
 
 ----------------------------------------------------------------------------------------
 
-3. FLUENTD
+3. #FLUENTD
 
 kubectl apply -f fluentd-configmap.yaml
 
