@@ -45,6 +45,9 @@ EFK-STACK
 
 kubectl apply -f elastic-credentials
 
+### You will need this later on for fluentd ###
+kubectl apply -f elasitc-auth-secret.yaml
+
 kubectl apply -f es-statefulset.yaml
 
 Go into elasticpod
@@ -71,6 +74,8 @@ kubectl port-forward svc/kibana 5601:5601 -n logging
 ----------------------------------------------------------------------------------------
 
 3. FLUENTD
+
+kubecttl apply -f fluentd-serviceaccount.yaml
    
 kubectl apply -f fluentd-daemonset.yaml
 
