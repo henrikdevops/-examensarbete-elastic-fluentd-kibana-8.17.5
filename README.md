@@ -64,6 +64,7 @@ kubectl apply -f kibana-secret.yaml
 kubectl apply -f kibana-deployment.yaml
 
 kubectl port-forward svc/kibana 5601:5601 -n logging
+
 ----------------------------------------------------------------------------------------
 
 3. FLUENTD
