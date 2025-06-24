@@ -84,7 +84,9 @@ kubectl port-forward service/SERVICENAME 9200:9200 -n NAMESPACE
 ----------------------------------------------------------------------------------------
 ### KIBANA
 
+----------------------------------------------------------------------------------------
 ADD password in kibana-secret from password: kibana_system
+----------------------------------------------------------------------------------------
 
 kubectl apply -f kibana-secret.yaml
 
