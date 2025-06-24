@@ -41,10 +41,10 @@ data:
 
     <match kubernetes.**>
       @type elasticsearch
-      host elasticsearch
+      host elasticsearch.logging.svc.cluster.local
       port 9200
       scheme http
-      user elasticsearch
+      user elastic
       password "#{ENV['ELASTICSEARCH_PASSWORD']}"
       logstash_format true  
       logstash_prefix kubernetes
@@ -54,12 +54,4 @@ data:
       reconnect_on_error true
       reload_on_failure true
       request_timeout 10s
-      <buffer>
-        @type file
-        path /var/log/fluentd-buffers
-        chunk_limit_size 16MB
-        total_limit_size 512MB
-        flush_interval 5s
-        retry_forever true
-      </buffer>
     </match>
