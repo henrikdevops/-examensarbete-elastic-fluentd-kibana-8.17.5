@@ -1,4 +1,3 @@
-====================
 EFK-STACK
 ====================
 
@@ -36,7 +35,7 @@ kubectl apply -f fluentd-configmap.yaml
 
 =============================
 Micro8ks
-=============================
+
 
 snap install microk8s --classic --channel=1.33/stable
 microk8s enable dns
