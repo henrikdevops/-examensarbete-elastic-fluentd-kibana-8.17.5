@@ -7,6 +7,8 @@ kubectl apply -f elastic-credentials
 
 kubectl apply -f es-statefulset.yaml
 
+Go into elasticpod
+
 cd /bin
 
 ./elasticsearch-setup-passwords
