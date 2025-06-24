@@ -41,7 +41,7 @@ source ~/.bashrc
 EFK-STACK
 ====================
 
-1. ELASTICSEARCH
+1. ### ELASTICSEARCH
 
 kubectl apply -f elastic-credentials
 
