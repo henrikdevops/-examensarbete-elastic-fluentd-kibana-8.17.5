@@ -20,13 +20,13 @@ kubcetl apply -f elastic-credentials #Använd lösenord från es-generator
 
 2. KIBANA
 
-kubectl create secret generic kibana-auth \
-  --from-literal=username=kibana_system \
-  --from-literal=password=your-kibana-password \   
-  -n logging
-#Use password from ./elasticsearch-setups-password auto
+ADD password in kibana-secret from password: kibana_system
 
-kubectl apply -f kibana-deployment.yml
+kubectl apply -f kibana-secret.yaml
+
+kubectl apply -f kibana-deployment.yaml
+
+kubectl port-forward svc/kibana 5601:5601 -n logging
 
 3. FLUENTD
    
@@ -48,6 +48,11 @@ microk8s enable cert-manager
 microk8s enable ingress dns
 
 microk8s enable dashboard
+
+kubectl -n kubernetes-dashboard port-forward svc/kubernetes-dashboard-kong-proxy 8443:443
+
+microk8s kubectl create token default
+
 
 sudo vi ~/.bashrc
 
