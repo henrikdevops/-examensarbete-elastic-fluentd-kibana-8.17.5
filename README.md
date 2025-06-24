@@ -82,11 +82,13 @@ kubectl port-forward svc/kibana 5601:5601 -n logging
 
 3. FLUENTD
 
+kubectl apply -f fluentd-configmap.yaml
+
 kubecttl apply -f fluentd-serviceaccount.yaml
    
 kubectl apply -f fluentd-daemonset.yaml
 
-kubectl apply -f fluentd-configmap.yaml
+
 
 
 
