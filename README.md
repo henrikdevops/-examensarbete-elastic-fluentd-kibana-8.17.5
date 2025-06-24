@@ -22,6 +22,7 @@ microk8s kubectl create token default
 ----------------------------------------------------------------------------------------
 Wihtout this you need to run: microk8s kubectl apply instead of only using kubectl
 {
+
 sudo vi ~/.bashrc
 
 ADD
