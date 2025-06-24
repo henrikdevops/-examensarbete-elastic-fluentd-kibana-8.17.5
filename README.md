@@ -1,6 +1,36 @@
 Dont use this setup in prod. This is only for testing
 ====================
 
+Set up Microk8s
+=============================
+snap install microk8s --classic --channel=1.33/stable
+
+microk8s enable dns
+
+microk8s enable hostpath-storage
+
+microk8s enable cert-manager
+
+microk8s enable ingress dns
+
+microk8s enable dashboard
+
+kubectl -n kubernetes-dashboard port-forward svc/kubernetes-dashboard-kong-proxy 8443:443
+
+microk8s kubectl create token default
+
+{
+sudo vi ~/.bashrc
+
+ADD
+
+alias kubectl='microk8s kubectl'
+
+RUN
+
+source ~/.bashrc
+}
+
 
 EFK-STACK
 ====================
@@ -39,34 +69,7 @@ kubectl apply -f fluentd-daemonset.yaml
 kubectl apply -f fluentd-configmap.yaml
 
 
-Set up Microk8s
-=============================
-snap install microk8s --classic --channel=1.33/stable
 
-microk8s enable dns
-
-microk8s enable hostpath-storage
-
-microk8s enable cert-manager
-
-microk8s enable ingress dns
-
-microk8s enable dashboard
-
-kubectl -n kubernetes-dashboard port-forward svc/kubernetes-dashboard-kong-proxy 8443:443
-
-microk8s kubectl create token default
-
-
-sudo vi ~/.bashrc
-
-ADD
-
-alias kubectl='microk8s kubectl'
-
-RUN
-
-source ~/.bashrc
 
 
  
