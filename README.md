@@ -69,6 +69,7 @@ Password will be printed. Save them and use it for:
 
 - elastic-credentials
 - elastic-auth-secret
+- kibana-secret
 
 }
 
