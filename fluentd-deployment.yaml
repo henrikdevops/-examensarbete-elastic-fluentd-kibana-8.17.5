@@ -20,14 +20,24 @@ spec:
       containers:
         - name: fluentd
           image: fluent/fluentd-kubernetes-daemonset:v1.16.3-debian-elasticsearch8-1.0
+
           env:
             - name: FLUENT_UID
               value: "0"
-            - name: ES_API_KEY
-              valueFrom:
-                secretKeyRef:
-                  name: fluentd-api-key
-                  key: api_key
+            - name: ELASTICSEARCH_HOST
+              value: "http://elasticsearch.logging.svc:9200"
+            - name: ELASTICSEARCH_USER
+              value: "elastic"
+            - name: ELASTICSEARCH_PASSWORD
+              value: "asdasd"  # Replace with real password or secretKeyRef
+#          env:
+#            - name: FLUENT_UID
+#              value: "0"
+#            - name: ES_API_KEY
+#             valueFrom:
+#                secretKeyRef:
+#                  name: fluentd-api-key
+#                  key: api_key
           volumeMounts:
             - name: varlog
               mountPath: /var/log
