@@ -43,7 +43,7 @@ source ~/.bashrc
 EFK-STACK
 ====================
 
-1. ### ELASTICSEARCH
+### ELASTICSEARCH
 
 kubectl apply -f elastic-credentials
 
@@ -82,7 +82,7 @@ kubectl port-forward service/SERVICENAME 9200:9200 -n NAMESPACE
 
 
 ----------------------------------------------------------------------------------------
-2. ### KIBANA
+### KIBANA
 
 ADD password in kibana-secret from password: kibana_system
 
@@ -94,7 +94,7 @@ kubectl port-forward svc/SERVICENAME 5601:5601 -n NAMESPACE
 
 ----------------------------------------------------------------------------------------
 
-3. ### FLUENTD
+### FLUENTD
 
 kubectl apply -f fluentd-configmap.yaml
 
