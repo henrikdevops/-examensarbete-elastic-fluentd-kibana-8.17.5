@@ -28,7 +28,7 @@ kubectl create secret generic kibana-auth \
 
 kubectl apply -f kibana-deployment.yml
 
-3. Fluentd
+3. FLUENTD
    
 kubectl apply -f fluentd-daemonset.yaml
 
