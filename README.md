@@ -28,7 +28,7 @@ kubectl -n kubernetes-dashboard port-forward svc/kubernetes-dashboard-kong-proxy
 microk8s kubectl create token default
 
 ----------------------------------------------------------------------------------------
-### Wihtout this you need to run use microk8s before kubectl - Just anoying!!
+### Without this you need to run use microk8s before kubectl - Just anoying!!
 
 {
 
