@@ -2,6 +2,7 @@
 ====================
 
 [info] Good to know!
+====================
 
 Elasticsearch cant use replicas on single-node cluster
 
