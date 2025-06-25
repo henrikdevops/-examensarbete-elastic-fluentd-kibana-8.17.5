@@ -32,17 +32,11 @@ microk8s kubectl create token default
 
 {
 
-RUN in console
+RUN in console: sudo vi ~/.bashrc
 
-sudo vi ~/.bashrc
+ADD: alias kubectl='microk8s kubectl' 
 
-ADD
-
-alias kubectl='microk8s kubectl' 
-
-RUN in console
-
-source ~/.bashrc
+RUN in console: source ~/.bashrc
 
 }
 
