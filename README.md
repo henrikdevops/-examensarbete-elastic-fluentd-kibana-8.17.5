@@ -56,6 +56,7 @@ EFK-STACK
 
 ----------------------------------------------------------------------------------------
 
+kubectl apply -f elasticsearch-secret.yaml
 kubectl apply -f es-statefulset.yaml
 
 Go into elasticpod to setup the password.
@@ -72,6 +73,8 @@ Password will be printed. Save them and use it for:
 - kibana-secret
 
 }
+
+Change password in elasticsearch-secret.yaml # Apply again!
 
 kubectl port-forward service/SERVICENAME 9200:9200 -n NAMESPACE
 
