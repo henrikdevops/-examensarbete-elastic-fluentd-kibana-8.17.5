@@ -5,7 +5,7 @@
 
 ### Good to know!
 
-Elasticsearch cant use replicas on single-node cluster
+Elasticsearch cant use replicas on single-node cluster ( Default is 1 )
 
 ---------------------------------------------------------------------------------------
 
