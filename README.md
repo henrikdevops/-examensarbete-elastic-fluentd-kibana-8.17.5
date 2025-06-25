@@ -57,6 +57,7 @@ EFK-STACK
 ----------------------------------------------------------------------------------------
 
 kubectl apply -f elasticsearch-secret.yaml
+
 kubectl apply -f es-statefulset.yaml
 
 Go into elasticpod to setup the password.
