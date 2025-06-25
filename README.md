@@ -53,8 +53,6 @@ EFK-STACK
 
 ### ELASTICSEARCH
 
-kubectl apply -f elastic-credentials
-
 {
 
 You will need elastic-auth-secret later on for fluentd
@@ -62,8 +60,6 @@ You will need elastic-auth-secret later on for fluentd
 Add your elastic-password in this file before applying
 
 }
-
-kubectl apply -f elasitc-auth-secret.yaml
 
 kubectl apply -f es-statefulset.yaml
 
@@ -95,8 +91,6 @@ kubectl port-forward service/SERVICENAME 9200:9200 -n NAMESPACE
 ----------------------------------------------------------------------------------------
 ADD password in kibana-secret from password: kibana_system
 ----------------------------------------------------------------------------------------
-
-kubectl apply -f kibana-secret.yaml
 
 kubectl apply -f kibana-deployment.yaml
 
