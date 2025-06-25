@@ -120,6 +120,14 @@ kubectl apply -f fluentd-daemonset.yaml
 ### Set up index in kibana 
 ---------------------------------------------------------------------------------------
 
+1. In the left corner, push the hamburgermenu and scroll down to Stack Management
+2. Choose Index Management
+3. Create Index name
+4. Go to Data Views
+5. Set Name
+6. Set Index pattern
+7. Save data vied to Kibana
+
 
 ### Useful commands
 
