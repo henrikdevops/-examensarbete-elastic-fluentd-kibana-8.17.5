@@ -53,14 +53,6 @@ EFK-STACK
 
 ### ELASTICSEARCH
 
-{
-
-You will need elastic-auth-secret later on for fluentd
-
-Add your elastic-password in this file before applying
-
-}
-
 kubectl apply -f es-statefulset.yaml
 
 Go into elasticpod to setup the password.
@@ -79,11 +71,7 @@ Password will be printed. Save them and use it for:
 
 }
 
-kubcetl apply -f elastic-credentials #Använd lösenord från es-generator
-
 kubectl port-forward service/SERVICENAME 9200:9200 -n NAMESPACE
-
-
 
 ----------------------------------------------------------------------------------------
 ### KIBANA
