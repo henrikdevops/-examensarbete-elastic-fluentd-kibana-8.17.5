@@ -57,7 +57,7 @@ spec:
       serviceAccountName: fluentd
       containers:
       - name: fluentd
-        image: fluent/fluentd:v1.16-1
+        image: fluent/fluentd-kubernetes-daemonset:v1.16.3-debian-elasticsearch8-1.0
         env:
         - name: ES_PASSWORD
           valueFrom:
