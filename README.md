@@ -1,6 +1,13 @@
 [info] Examensarbete
 ====================
 ----------------------------------------------------------------------------------------
+
+[INFO] Good to know!
+
+---------------------------------------------------------------------------------------
+
+Elasticsearch cant use replicas on single-node cluster. 
+
 Set up Microk8s
 =============================
 snap install microk8s --classic --channel=1.33/stable
