@@ -122,7 +122,7 @@ kubectl apply -f fluentd-daemonset.yaml
 
 list indices:
 
-curl -u elastic:yourpassword http://elasticsearch:9200/_cat/indices?v
+curl -u elastic:yourpassword http://iuselocalhostfortest:9200/_cat/indices?v
 
 
 
