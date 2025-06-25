@@ -1,3 +1,16 @@
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: elastic-auth
+  namespace: logging
+type: Opaque
+stringData:
+  password: #Add your elasticpassword
+
+---
+
+---
 apiVersion: v1
 kind: Service
 metadata:
