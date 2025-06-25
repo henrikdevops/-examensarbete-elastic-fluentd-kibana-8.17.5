@@ -132,7 +132,13 @@ list indices:
 
 curl -u elastic:yourpassword http://iuselocalhostfortest:9200/_cat/indices?v
 
+---------------------------------------------------------------------------------------
 
+### Useful test-application to generate logs in kubernetes-cluster
+
+https://github.com/henrikdevops/test-applications/tree/main
+
+---------------------------------------------------------------------------------------
 
 
 
