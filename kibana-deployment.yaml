@@ -6,7 +6,7 @@ metadata:
   namespace: logging
 type: Opaque
 stringData:
-  kibana_password: 8LXE9WZf9C4KW2TZ8R2G ## Paste password from kibana_system from elastic-generator
+  kibana_password: changeme ## Paste password from kibana_system from elastic-generator
 
 ---
 apiVersion: v1
