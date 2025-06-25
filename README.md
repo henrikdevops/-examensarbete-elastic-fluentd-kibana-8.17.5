@@ -127,6 +127,7 @@ kubectl apply -f fluentd-daemonset.yaml
 5. Set Name
 6. Set Index pattern
 7. Save data vied to Kibana
+8. Analytics -> Discover
 
 
 ### Useful commands
