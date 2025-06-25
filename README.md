@@ -118,9 +118,12 @@ kubectl apply -f fluentd-daemonset.yaml
 ----------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------
 
-### Useful commands:
+### Useful commands
 
-curl -u elastic:yourpassword http://elasticsearch:9200/_cat/indices?v
+list indices by pattern:
+
+curl -u elastic:yourpassword "http://elasticsearch:9200/fluentd-*/_search?pretty"
+
 
 
 
