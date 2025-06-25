@@ -101,8 +101,13 @@ kubectl port-forward svc/SERVICENAME 5601:5601 -n NAMESPACE
 ### FLUENTD
 
 ----------------------------------------------------------------------------------------
-Make sure to set elastic-password before apply
+Make sure to CREATE secret
 ----------------------------------------------------------------------------------------
+
+kubectl create secret generic fluentd-es-auth \
+  --from-literal=ES_PASSWORD='your-es-password' \
+  -n logging
+
 
 kubectl apply -f fluentd-configmap.yaml
 
